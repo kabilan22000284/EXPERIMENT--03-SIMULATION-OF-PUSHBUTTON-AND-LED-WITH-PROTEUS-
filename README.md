@@ -65,6 +65,8 @@ We are now at the last part of step by step guide on how to simulate STM32 proje
 
 14. Double click on the the MCU part to open settings. Next to the Program File option, give full path to the Hex file generated using STM32Cube IDE. Then set the external crystal frequency to 8M (i.e. 8 MHz). Click OK to save the changes.
 https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
+![image](https://user-images.githubusercontent.com/123469171/234187459-e852ac2f-9987-41b7-bfa8-835639a9bf0f.png)
+
 
 15. click on debug and simulate using simulation as shown below 
 
@@ -72,11 +74,38 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 
 ## STM 32 CUBE PROGRAM :
+```
+#include "main.h"
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+  MX_GPIO_Init();
+  while (1)
+  {
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+	  HAL_Delay(500);
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+	  HAL_Delay(500);
+  }
+ }
+ ```
+programmed by:V.kabilan
+Register no.:212222100018
 
 
 
 
 ## Output screen shots of proteus  :
+##  when led  is in off state
+![image](https://user-images.githubusercontent.com/123469171/234186622-3a978c5d-9cfd-4dfb-877f-66da5cfb8c73.png)
+## when led is in on state
+![image](https://user-images.githubusercontent.com/123469171/234187526-cafee984-9762-4665-a9e5-bb510d778cca.png)
+
+
+
  
  
  
