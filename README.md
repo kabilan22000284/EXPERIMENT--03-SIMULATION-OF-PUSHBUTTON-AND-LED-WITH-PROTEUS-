@@ -92,9 +92,10 @@ int main(void)
   }
  }
  ```
+ ```
 programmed by:V.kabilan
-
 Register no.:212222100018
+```
 
 
 
